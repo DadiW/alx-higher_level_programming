@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-import Olumide
+sys.stdout.write("#pythoniscool")
