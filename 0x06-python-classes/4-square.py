@@ -1,48 +1,48 @@
 #!/usr/bin/python3
+"""defines a class square"""
 
 
 class Square:
-    """
-    class square that has attributes:
-        size
-    some attributes are protected from input.
+    """Represents a square
+    Attributes:
+        __size (int): size of the sides of a square
     """
     def __init__(self, size=0):
+        """Initializes the Square
+        Args:
+            size (int): size of sides of square
+        Returns:
+            None
         """
-        initialization function for our square clasee
+        self.size = size
+
+    def area(self):
+        """Calculates the square's area
+        Returns:
+            Area
         """
-        if self.__validate_size(size):
-            self.__size = size
+        return (self.__size) ** 2
 
     @property
     def size(self):
-        """
-        getter for size attribute
+        """getter of size
+        Returns:
+           The size of square
         """
         return self.__size
 
     @size.setter
     def size(self, value):
+        """Setter of size
+        Args:
+            value (int): The size of the sides of the square
+        Returns:
+            None
         """
-        setter for size attribute
-        """
-        if self.__validate_size(value):
-            self.__size = value
-
-    def area(self):
-        """
-        calculates the area of the square
-        """
-        return self.__size ** 2
-
-    def __validate_size(self, size):
-        """
-        validates the size, checking for errors
-        """
-        if type(size) != int:
+        if type(value) is not int:
             raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
         else:
-            return True
-        return False
+            if value < 0:
+                raise ValueError("size must be >= 0")
+            else:
+                self.__size = value
