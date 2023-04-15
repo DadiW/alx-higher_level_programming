@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const sqrsize = parseInt(process.argv[2]);
-if (isNaN(sqrsize) {
+if (Number.isNaN(sqrsize) {
 	console.log('Missing size');
 } else {
 	for ( let i = 0, rw; i < sqrsize; i++) {
