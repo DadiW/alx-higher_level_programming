@@ -1,13 +1,13 @@
 #!/usr/bin/node
-const sqrsize = process.argv[2];
-if (isNaN(parseInt(sqrsize)) {
+const sz = parseInt(process.argv[2]);
+if (Number.isNaN(sz)) {
 	console.log('Missing size');
 } else {
-	for ( let i = 0; i < parseInt(sqrsize); i++) {
-		let rw = '';
-		for ( let col = 0; col < parseInt(sqrsize); col++) {
-			rw += 'X';
+	for (let i, r; i < sz; i++) {
+		r = '';
+		for (let c = 0; c < sz; c++) {
+			r += 'X';
 		}
-		console.log(rw);
+		console.log(r);
 	}
 }
